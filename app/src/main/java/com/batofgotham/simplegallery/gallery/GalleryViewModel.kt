@@ -33,10 +33,7 @@ class GalleryViewModel @Inject constructor(): ViewModel() {
         coroutineScope.launch{
             var getImagesDeferred = GalleryApi.retrofitService.getImages()
             try{
-//                var resultWord = getImagesDeferred.await()
                 _photos.value = getImagesDeferred.await().photos.photo
-
-
             }catch (t:Throwable){
             }
         }
